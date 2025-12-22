@@ -1,0 +1,281 @@
+@media only screen and (max-device-width: 500px) {
+
+    .for-desktop{display: none;}
+    .for-desktop-inline{display:none;}
+    .for-ipad-light{display:none;}
+    .for-ipad-heavy{display:none;}
+    .for-ipad-light-inline{display:none;}
+    .for-ipad-heavy-inline{display:none;}
+    .for-mobile{display: block;}
+    .for-mobile-inline{display:inline-block;}
+
+        .desk-msg{display:flex;}
+    body{padding-top:130px;}
+    .new-btn{padding:8px 12px; font-size: 12px;}
+    /*
+    .desktop-div{display:none}
+
+    .mobile-div{height:100%;width:100%;display:block;}
+    */
+
+    /*
+    ------------about-PAGE------------
+    */
+
+    .custom-flex{display:block;}
+    .header-box{top: 0px;left: 15px;right: 15px;background-color: #598c69;padding: 10px;border-radius: 25px 25px 0 0;}
+    .menu-btn-box{margin: 0 0px; font-size: 14px; padding: 12px 9px; display: flex !important; align-items: center !important; justify-content: center !important;}
+
+    .side-header{width: 100vw; right: -110vw; padding: 20px;}
+    .sidebar-main-links > ul > li > a, .sidebar-main-links ul li .menu-trigger {font-size: 18px;}
+    .sec-head{font-size:35px;margin-bottom: 25px;}
+    .new-sec2 {margin-bottom: 50px;}
+    .new-sec2-box{    margin-bottom: 10px;}
+    .new-sec2-img{min-height:260px;}
+    .home-sec2{margin-bottom:50px;}
+    .home-sec2-img{margin-bottom:25px;}
+    .home-sec2-txt{    padding-right: 0px;}
+    .new-sec2-txt-para{font-size:14px;opacity:1 !important;}
+    .new-sec2-txt a{opacity:1 !important;}
+    .new-sec2-txt .new-btn{opacity:1 !important;}
+    .new-sec2-img:before {background-color: rgba(0,0,0,0.7) !important;}
+    /*.new-sec1-txt{justify-content: flex-end;width:100%;}*/
+    .new-sec1-head{    font-size: 35px;}
+    .new-sec1-btn{margin-bottom:20px;}
+    .what-we-do-box {width: calc(50% - 10px); max-width: 48%; flex: 0 0 auto; box-sizing: border-box; margin: 0; margin-bottom: 25px;}
+    .what-we-do-cover {display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 15px !important;}
+    .what-we-do-box:after{display:none;}
+    .what-we-do-box:before{display:none;}
+    .new-middle-cover {padding: 50px 15px;}
+    .new-middle-img-head{font-size:35px;}
+    .home-sec8-box{padding:0 10px;}
+    .home-green3 {margin-top:50px;}
+    /*home-page*/
+
+
+
+
+
+    .volunteer_text h2{font-size:30px;}
+    .volunteer_text{    padding: 25px 15px;}
+
+    /* Remove box styling for What We Do section on mobile */
+    .volunteer-sec2 {
+        padding: 30px 0;
+    }
+    .volunteer-sec2-box {
+        border: none;
+        padding: 20px 0;
+        margin-bottom: 25px;
+        min-height: auto;
+        height: auto;
+        display: block;
+    }
+    .volunteer-sec-boximg {
+        max-width: 60px;
+        margin: 0 auto 15px auto;
+        padding: 10px;
+    }
+    .volunteer-sec-boxhead {
+        font-size: 14px;
+        line-height: 1.2;
+        min-height: 39px;
+        max-height: 39px;
+        width: 145px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .volunteer-sec-boxhead br {
+        display: none;
+    }
+
+    /* Better spacing for Impact Water text on mobile */
+    .what-we-do-txt {
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Blog box responsive styles for mobile */
+    .blog-box {
+        margin-top: 20px;
+        min-height: auto;
+        margin-bottom: 15px;
+    }
+
+    .blog-box-img {
+        height: 180px;
+    }
+
+    .blog-box-content {
+        min-height: auto;
+        height: auto;
+    }
+    .what-we-do-img {
+        padding: 0 40px;
+        margin-bottom: 10px;
+    }
+    .what-we-do-box {
+        margin-bottom: 30px;
+    }
+
+    .pre-footer {margin-bottom: 25px;}
+    .pre-footer-left{padding:15px 15px;}
+    .pre-footer-left p{font-size:20px;}
+    .pre-footer-right{padding:45px 15px;}
+
+    .footer-slider-txt{width:100%;margin-left:0;}
+    .footer-slider-box{text-align:center;padding: 0 15px}
+
+    .main-footer-logo img{height:50px;}
+    .subcribe-box {margin-top: 50px;margin-bottom: 20px;}
+    .subcribe-wrapp{background-color: transparent;}
+    .subcribe-wrapp > div {width: calc(50% - 0px);}
+    .subcribe-wrapp button{margin-top: 5px;max-width:100%;width:100%;}
+    /*home-page*/
+/*---our-story--*/
+.home-sec3-banner {margin-bottom:25px;}
+/*---our-story---*/
+/*--patrons--*/
+.other-page-cover{margin-bottom:0;}
+.home-sec8{margin-bottom:50px;}
+.text-align-right {text-align:left;}
+.text-align-right h2 {text-align:left;}
+/*--patrons--*/
+/*---walk-for-water--*/
+.what-we-do {margin-top:50px;margin-bottom:50px;}
+.walk-for-water-pledge{max-width:100%;padding-left:15px;}
+.listing {margin-top: 50px;}
+.home-green2 {margin-top:50px;}
+.what-we-do-img {padding: 0 50px;}
+.water-pledge-form {
+  top: 40%;
+  right: 15px;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+/*--walk-for-water--*/
+/*---green-india-challenge--*/
+.green-india-challenge-awards{max-width:100%;    padding-left: 15px;}
+
+/* Impact cards mobile layout - 2 on first line, 1 centered on second */
+.green-challenge-icon{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 20px 0 0 0 !important;
+  padding: 0 !important;
+}
+.green-challenge-icon-box {
+  width: calc(50% - 5px) !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+.green-challenge-icon-box .project-row-img {
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: block !important;
+}
+.green-challenge-icon-box .project-row-txt {
+  width: 100% !important;
+  text-align: center !important;
+  margin-top: 20px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.green-challenge-icon-box .project-row-txt p {
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.green-challenge-icon-box .project-row-txt p span {
+  text-align: center !important;
+  display: block !important;
+}
+
+/*---green-india-challenge--*/
+
+
+
+    }
+
+
+    /*1080*/
+    /*810*/
+
+
+    @media only screen and (min-width: 501px) and (max-width: 850px){
+        .for-desktop{display: none;}
+        .for-mobile{display:none;}
+        .for-desktop-inline{display:none;}
+        .for-mobile-inline{display:inline-block;}
+        .for-ipad-heavy{display:none;}
+        .for-ipad-heavy-inline{display:none;}
+        .for-ipad-light-inline{display:inline-block;}
+        .for-ipad-light{display:block;}
+        .custom-flex {display: block;}
+
+
+
+        .main-footer-logo img{height:100px;}
+        .subcribe-wrapp > div{    width:calc(50% - 50px);}
+        .subcribe-wrapp input{width:100%;}
+        .main-footer-link-box {margin-top: 40px;}
+
+
+
+
+    }
+
+    @media only screen and (min-width: 851px) and (max-width: 1150px){
+
+        .for-desktop{display: none;}
+    .for-mobile{display: none;}
+    .for-desktop-inline{display:none;}
+    .for-mobile-inline{display:inline-block;}
+    .for-ipad-light{display:none;}
+    .for-ipad-light-inline{display:none;}
+    .for-ipad-heavy-inline{display:inline-block;}
+    .for-ipad-heavy{display:block;}
+
+
+    .volunteer_text h2 {font-size: 32px;}
+    .volunteer_text p{font-size:16px;}
+    .footer-slider-txt-content{font-size:16px;}
+    .main-footer-logo img{height:50px;}
+    .subcribe-box h3{font-size: 16px;}
+    .subcribe-box h3 span{    font-size: 22px;}
+    .subcribe-wrapp{background-color: transparent;}
+    .subcribe-wrapp > div{width: calc(100% - 143px);}
+    .subcribe-wrapp button{    margin-top: 10px;}
+
+
+
+    }
+
+
+    @media only screen and (min-width: 1151px){
+        .for-mobile{display: none;}
+        .for-mobile-inline{display:none;}
+        .for-ipad-light{display:none;}
+        .for-ipad-heavy{display:none;}
+        .for-ipad-light-inline{display:none;}
+        .for-ipad-heavy-inline{display:none;}
+        .for-desktop{display: block;}
+        .for-desktop-inline{display:inline-block;}
+    }
+
+
+    @media only screen and (min-width: 1151px) and (max-width: 1370px){}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Download Space Hero App – Redirect</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper-div"></div>
+    <script>
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod|Mac|mac/.test(userAgent) && !window.MSStream) {
+        window.location.href =
+          "https://apps.apple.com/in/app/space-hero-parking/id6733226327";
+      }
+      if (/android|window/i.test(userAgent)) {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.spacehero";
+      }
+    </script>
+  </body>
+</html>

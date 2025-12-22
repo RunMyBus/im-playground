@@ -1,0 +1,707 @@
+/* ============================================
+   MICRO-INTERACTIONS & ANIMATIONS
+   ============================================ */
+
+/* Global Animation Variables */
+:root {
+  --animation-duration-fast: 0.2s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.5s;
+  --animation-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --shadow-active: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --scale-hover: 1.03;
+  --scale-active: 0.97;
+}
+
+/* ============================================
+   BUTTON MICRO-INTERACTIONS
+   ============================================ */
+
+/* Base button styles with transitions */
+.btn-circle,
+.login_box_btn,
+.menu-btn-box,
+.new-btn,
+.challenge-form-btn button,
+.water-form-box button,
+.jwfw2-btn button,
+.volunteer-form-btn button {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effects for all buttons */
+.btn-circle:hover,
+.login_box_btn:hover,
+.menu-btn-box:hover,
+.new-btn:hover,
+.challenge-form-btn button:hover,
+.water-form-box button:hover,
+.jwfw2-btn button:hover,
+.volunteer-form-btn button:hover {
+  transform: translateY(-2px) scale(var(--scale-hover));
+  box-shadow: var(--shadow-hover);
+}
+
+/* Active/pressed state for buttons */
+.btn-circle:active,
+.login_box_btn:active,
+.menu-btn-box:active,
+.new-btn:active,
+.challenge-form-btn button:active,
+.water-form-box button:active,
+.jwfw2-btn button:active,
+.volunteer-form-btn button:active {
+  transform: translateY(0) scale(var(--scale-active));
+  box-shadow: var(--shadow-active);
+  transition: all 0.1s var(--animation-easing-smooth);
+}
+
+/* Ripple effect for buttons */
+.btn-circle::before,
+.login_box_btn::before,
+.menu-btn-box::before,
+.new-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-circle:active::before,
+.login_box_btn:active::before,
+.menu-btn-box:active::before,
+.new-btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Specific button enhancements */
+.btn-circle {
+  background: linear-gradient(135deg, #f05915, #d04910);
+  box-shadow: 0 4px 15px rgba(240, 89, 21, 0.3);
+}
+
+.btn-circle:hover {
+  background: linear-gradient(135deg, #d04910, #b83d0c);
+  box-shadow: 0 8px 25px rgba(240, 89, 21, 0.4);
+}
+
+.login_box_btn {
+  background: linear-gradient(135deg, #f55f22d6, #e04a1a);
+  box-shadow: 0 4px 15px rgba(245, 95, 34, 0.3);
+}
+
+.login_box_btn:hover {
+  background: linear-gradient(135deg, #e04a1a, #c73f15);
+  box-shadow: 0 8px 25px rgba(245, 95, 34, 0.4);
+}
+
+.menu-btn-box {
+  background: linear-gradient(135deg, #f05915, #d04910);
+  box-shadow: 0 4px 15px rgba(240, 89, 21, 0.3);
+}
+
+.menu-btn-box:hover {
+  background: linear-gradient(135deg, #d04910, #b83d0c);
+  box-shadow: 0 8px 25px rgba(240, 89, 21, 0.4);
+}
+
+/* ============================================
+   FORM INPUT MICRO-INTERACTIONS
+   ============================================ */
+
+/* Enhanced input focus states */
+input,
+select,
+textarea {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+}
+
+/* Focus animations for all inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(240, 89, 21, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: #f05915 !important;
+}
+
+/* Specific form input enhancements */
+.challenge-form-box input,
+.water-form-box input,
+.login_box_field input {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.challenge-form-box input:focus,
+.water-form-box input:focus,
+.login_box_field input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(240, 89, 21, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: #f05915 !important;
+}
+
+/* Input error shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.input-error {
+  animation: shake 0.5s var(--animation-easing-smooth);
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Floating label animation */
+.floating-label {
+  position: relative;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  pointer-events: none;
+  color: #666;
+  background: transparent;
+  padding: 0 5px;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 10px;
+  font-size: 12px;
+  color: #f05915;
+  background: white;
+}
+
+/* ============================================
+   NAVIGATION MICRO-INTERACTIONS
+   ============================================ */
+
+/* Header navigation links */
+.main-links-box ul li a,
+.main-sublinks-box ul li a {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+}
+
+.main-links-box ul li a:hover,
+.main-sublinks-box ul li a:hover {
+  color: #f05915 !important;
+  transform: translateX(5px);
+}
+
+/* Active menu item indicator */
+.main-links-box ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f05915;
+  transform: scaleX(1);
+  transition: transform var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.main-links-box ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f05915;
+  transform: scaleX(0);
+  transition: transform var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.main-links-box ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown menu animations */
+.main-links-box ul li ul {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.main-links-box ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile menu animations */
+.side-header {
+  transition: right 0.3s ease, transform var(--animation-duration-slow) var(--animation-easing-smooth);
+}
+
+.side-header.open {
+  transform: translateX(-42vw);
+}
+
+/* ============================================
+   CARD & TILE MICRO-INTERACTIONS
+   ============================================ */
+
+/* Card hover effects - DISABLED for text sections, only for forms */
+.challenge-form-box,
+.water-form-box,
+.step3_right_treeDetail {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+}
+
+/* Text sections - NO transitions or transforms */
+.home-sec2-box,
+.volunteer-sec2-box,
+.what-we-do-box {
+  transition: none !important;
+  position: relative;
+}
+
+.challenge-form-box:hover,
+.water-form-box:hover,
+.step3_right_treeDetail:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Text sections - NO hover effects */
+.home-sec2-box:hover,
+.volunteer-sec2-box:hover,
+.what-we-do-box:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Card image hover effects - DISABLED for all sections */
+.home-sec2-img,
+.volunteer-sec-boximg,
+.what-we-do-img,
+.new-sec2-img {
+  transition: none !important;
+  overflow: hidden;
+}
+
+/* NO image zoom on hover */
+.home-sec2-img:hover img,
+.volunteer-sec-boximg:hover img,
+.what-we-do-img:hover img,
+.new-sec2-img:hover img,
+.new-sec2-img img,
+.new-sec2-box:hover img,
+.new-sec2-box img {
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
+}
+
+/* Card content fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s var(--animation-easing-smooth);
+}
+
+/* ============================================
+   SLIDER & CAROUSEL MICRO-INTERACTIONS
+   ============================================ */
+
+/* Slider navigation buttons */
+.slider-nav button {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.slider-nav button:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav button:active {
+  transform: scale(0.95);
+}
+
+/* Slider image transitions */
+.slider-image-container img {
+  transition: all var(--animation-duration-slow) var(--animation-easing-smooth);
+}
+
+.slider-image-container:hover img {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   FOOTER MICRO-INTERACTIONS
+   ============================================ */
+
+/* Footer links */
+.main-footer-link-box a,
+.footer-appLink a {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.main-footer-link-box a:hover,
+.footer-appLink a:hover {
+  color: #f05915 !important;
+  transform: translateY(-2px);
+}
+
+/* Social media icons */
+.social-media-icons a {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.social-media-icons a:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* ============================================
+   LOADING & PROGRESS ANIMATIONS
+   ============================================ */
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: var(--progress-width, 100%); }
+}
+
+.progress-bar {
+  animation: progressFill 1s var(--animation-easing-smooth);
+}
+
+/* ============================================
+   MODAL & POPUP ANIMATIONS
+   ============================================ */
+
+/* Modal backdrop */
+.walk-for-water-popup,
+.volunteer-form {
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal content */
+.walk-for-water-popup-wrap,
+.volunteer-form-wrap {
+  animation: slideInUp var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE MICRO-INTERACTIONS
+   ============================================ */
+
+/* Reduce animations on mobile for performance */
+@media (max-width: 768px) {
+  :root {
+    --animation-duration-fast: 0.15s;
+    --animation-duration-normal: 0.2s;
+    --animation-duration-slow: 0.3s;
+  }
+
+  /* Disable transform animations on mobile */
+  .btn-circle:hover,
+  .login_box_btn:hover,
+  .menu-btn-box:hover,
+  .new-btn:hover {
+    transform: none;
+  }
+
+  .home-sec2-box:hover,
+  .volunteer-sec2-box:hover,
+  .what-we-do-box:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f05915;
+  outline-offset: 2px;
+}
+
+/* Ripple effect styles */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Loading state styles */
+button.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading-spinner {
+  margin-left: 10px;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyboard navigation styles */
+.keyboard-navigation *:focus {
+  outline: 2px solid #f05915 !important;
+  outline-offset: 2px !important;
+}
+
+/* Valid input styles */
+input.valid {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1) !important;
+}
+
+/* Card flip animation */
+@keyframes card-flip {
+  0% { transform: perspective(1000px) rotateY(0deg); }
+  100% { transform: perspective(1000px) rotateY(5deg); }
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: var(--progress-width, 100%); }
+}
+
+.progress-bar {
+  animation: progressFill 1s var(--animation-easing-smooth);
+  overflow: hidden;
+}
+
+/* Enhanced focus states for better accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f05915;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(240, 89, 21, 0.1);
+}
+
+/* Smooth transitions for interactive elements only (not global) */
+button,
+a,
+.btn-circle,
+.login_box_btn,
+.menu-btn-box,
+.new-btn,
+.hover-lift,
+.main-links-box ul li a,
+.main-sublinks-box ul li a,
+.header-new-links-box > li > a,
+.header-new-links-box > li > span,
+.slider-nav button,
+.slider-image-container img,
+.home-sec2-img img,
+.volunteer-sec-boximg img,
+.what-we-do-img img,
+.social-media-icons a,
+.im-loading-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+/* Disable transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Animation utility classes */
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s var(--animation-easing-smooth);
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s var(--animation-easing-smooth);
+}
+
+/* Hover effect utilities */
+.hover-lift {
+  transform: translateY(-3px);
+  /*box-shadow: var(--shadow-hover);*/
+}
+
+.hover-scale:hover {
+  transform: scale(var(--scale-hover));
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(240, 89, 21, 0.3);
+}
+
+/* ============================================
+   OVERRIDE: DISABLE ALL HOVER EFFECTS ON TEXT SECTIONS
+   ============================================ */
+/* This must be at the end to override all previous rules */
+.home-sec2-box,
+.home-sec2-box:hover,
+.home-sec2-box.hover-lift,
+.home-sec2-box.hover-lift:hover,
+.home-sec2-txt,
+.home-sec2-txt:hover,
+.home-sec2-txt.hover-lift,
+.home-sec2-txt.hover-lift:hover,
+.volunteer-sec2-box,
+.volunteer-sec2-box:hover,
+.volunteer-sec2-box.hover-lift,
+.volunteer-sec2-box.hover-lift:hover,
+.what-we-do-box,
+.what-we-do-box:hover,
+.what-we-do-box.hover-lift,
+.what-we-do-box.hover-lift:hover,
+.home-sec8-box,
+.home-sec8-box:hover,
+.home-sec8-box.hover-lift,
+.home-sec8-box.hover-lift:hover,
+.new-sec2-box,
+.new-sec2-box:hover,
+.new-sec2-box.hover-lift,
+.new-sec2-box.hover-lift:hover,
+.green-challenge-sec_2,
+.green-challenge-sec_2:hover,
+.hara-padding,
+.hara-padding:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+  padding: inherit !important;
+}
+
+/* Ensure initiative images don't scale */
+.new-sec2-box img,
+.new-sec2-box:hover img,
+.new-sec2-img img,
+.new-sec2-img:hover img {
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
+}
+
+/* Disable hover-lift on buttons inside initiative cards */
+.new-sec2-box .hover-lift:hover,
+.new-sec2-txt .hover-lift:hover,
+.new-sec2-box .new-btn.hover-lift:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}

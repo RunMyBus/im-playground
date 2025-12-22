@@ -1,73 +1,78 @@
-# Welcome to your Lovable project
+# Igniting Minds Website
 
-## Project info
+The official website for Igniting Minds (IM), built with Next.js and featuring modern web technologies for an engaging user experience.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Responsive Design**: Built with Material-UI for consistent, mobile-first design
+- **Interactive Maps**: Google Maps and Mapbox integration for location-based features
+- **Data Visualization**: Charts and data grids using MUI X components
+- **Smooth Animations**: AOS (Animate On Scroll) and Typed.js for dynamic content
+- **Form Handling**: Robust form management with Formik
+- **Image Processing**: Optimized image handling with Sharp
+- **Social Sharing**: React Share integration for content distribution
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Framework**: Next.js 14.0.4
+- **UI Library**: Material-UI (MUI) v5.15.2
+- **Maps**: React Google Maps API, Mapbox GL
+- **Charts**: MUI X Charts & Data Grid
+- **Forms**: Formik with validation
+- **Animations**: AOS, Typed.js
+- **Icons**: React Icons, MUI Icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js (Latest LTS version recommended)
+- npm or yarn package manager
 
-**Use your preferred IDE**
+### Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Set up environment variables:
+   - Copy `.env.local` and configure API keys
+   - Add Google Maps API key
+   - Add Mapbox access token
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Run the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server on port 3000
+- `npm run build` - Build production version
+- `npm run start` - Start production server on port 3000
+- `npm run lint` - Run ESLint for code quality
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+├── src/              # Source code
+├── public/           # Static assets
+├── server.js         # Custom server configuration
+├── next.config.js    # Next.js configuration
+└── package.json      # Dependencies and scripts
+```
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run `npm run lint` to check code quality
+5. Submit a pull request
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is private and proprietary to Igniting Minds.

@@ -1,0 +1,863 @@
+/**
+ * Landing Page Styles
+ * Comprehensive CSS for all landing page components with animations and responsiveness
+ */
+
+/* ==========================================================================
+   GLOBAL STYLES & ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Prevent body scrolling when popup is open */
+body.popup-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Also support conventional modal-open class (bootstrap-style) */
+body.modal-open {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   LANDING PAGE MANAGER
+   ========================================================================== */
+
+.landing-page-manager {
+  position: relative;
+  z-index: 9999;
+}
+
+/* ==========================================================================
+   POPUP LANDING PAGE
+   ========================================================================== */
+
+.landing-page-popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  backdrop-filter: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.landing-page-popup {
+  background: transparent !important;
+  border-radius: 16px;
+  box-shadow: none;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease-out;
+  outline: none;
+}
+
+/* Ensure all elements inside popup have transparent backgrounds */
+.landing-page-popup *,
+.landing-page-popup *:before,
+.landing-page-popup *:after {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.landing-page-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+  color: #666;
+}
+
+.landing-page-popup-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  color: #333;
+}
+
+.landing-page-popup-content {
+  padding: 32px;
+  padding-top: 56px; /* Make room for close button */
+  background: transparent !important;
+}
+
+.landing-page-popup-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.landing-page-popup-body {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  background: transparent !important;
+}
+
+.landing-page-popup-body h1,
+.landing-page-popup-body h2,
+.landing-page-popup-body h3,
+.landing-page-popup-body h4,
+.landing-page-popup-body h5,
+.landing-page-popup-body h6 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.landing-page-popup-body p {
+  margin-bottom: 12px;
+}
+
+.landing-page-popup-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.landing-page-popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.landing-page-popup-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.landing-page-popup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* ==========================================================================
+   BANNER LANDING PAGE
+   ========================================================================== */
+
+.landing-page-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: white;
+  z-index: 9999;
+  box-shadow: none;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Ensure no internal scrollbars appear inside banner */
+  overflow: hidden;
+}
+
+.landing-page-banner-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.landing-page-banner-top {
+  top: 0;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.landing-page-banner-bottom {
+  bottom: 0;
+  transform: translateY(100%);
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.landing-page-banner-bottom.landing-page-banner-visible {
+  transform: translateY(0);
+}
+
+.landing-page-banner-side {
+  top: 50%;
+  left: auto;
+  right: 0;
+  transform: translateX(100%) translateY(-50%);
+  width: 350px;
+  border-radius: 16px 0 0 16px;
+}
+
+.landing-page-banner-side.landing-page-banner-visible {
+  transform: translateX(0) translateY(-50%);
+}
+
+.landing-page-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 16px;
+  background: transparent !important;
+  /* Prevent vertical scrolling within content area */
+  overflow: hidden;
+}
+
+/* Ensure all elements inside banner have transparent backgrounds */
+.landing-page-banner *,
+.landing-page-banner *:before,
+.landing-page-banner *:after {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Ensure injected HTML inside banner cannot scroll internally */
+.landing-page-banner .landing-page-banner-text,
+.landing-page-banner .landing-page-banner-body {
+  overflow: hidden !important;
+  max-height: 100%;
+}
+
+/* If any child explicitly sets overflow, force it off to avoid internal scrollbars */
+.landing-page-banner [style*="overflow"],
+.landing-page-banner [style*="overflow-y"],
+.landing-page-banner [style*="overflow-x"] {
+  overflow: hidden !important;
+}
+
+/* Hide any scrollbars within banner just in case */
+.landing-page-banner,
+.landing-page-banner-content {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+.landing-page-banner::-webkit-scrollbar,
+.landing-page-banner-content::-webkit-scrollbar,
+.landing-page-banner *::-webkit-scrollbar {
+  display: none;            /* WebKit */
+}
+
+/* Make media inside banners cover without causing overflow */
+.landing-page-banner img,
+.landing-page-banner video,
+.landing-page-banner picture img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.landing-page-banner-text {
+  flex: 1;
+}
+
+.landing-page-banner-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.landing-page-banner-body {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.landing-page-banner-body p {
+  margin: 0;
+}
+
+.landing-page-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.landing-page-banner-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.landing-page-banner-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.landing-page-banner-close {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.landing-page-banner-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   FULL PAGE LANDING PAGE
+   ========================================================================== */
+
+.landing-page-fullpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out;
+  outline: none;
+}
+
+.landing-page-fullpage-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  opacity: 1;
+}
+
+.landing-page-fullpage-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.landing-page-fullpage-container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  animation: scaleIn 0.5s ease-out 0.2s both;
+  background: transparent !important;
+}
+
+/* Ensure all elements inside full-page have transparent backgrounds */
+.landing-page-fullpage *,
+.landing-page-fullpage *:before,
+.landing-page-fullpage *:after {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.landing-page-fullpage-close {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.landing-page-fullpage-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.landing-page-fullpage-content {
+  color: white;
+}
+
+.landing-page-fullpage-header {
+  margin-bottom: 32px;
+}
+
+.landing-page-fullpage-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.landing-page-fullpage-body {
+  margin-bottom: 48px;
+}
+
+.landing-page-fullpage-text {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.landing-page-fullpage-text h1,
+.landing-page-fullpage-text h2,
+.landing-page-fullpage-text h3,
+.landing-page-fullpage-text h4,
+.landing-page-fullpage-text h5,
+.landing-page-fullpage-text h6 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.landing-page-fullpage-text p {
+  margin-bottom: 16px;
+}
+
+.landing-page-fullpage-text img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 24px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.landing-page-fullpage-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-page-fullpage-button {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 160px;
+}
+
+.landing-page-fullpage-button-primary {
+  background: white;
+  color: #667eea;
+  border: 2px solid white;
+}
+
+.landing-page-fullpage-button-primary:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.landing-page-fullpage-button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.landing-page-fullpage-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+.landing-page-fullpage-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.landing-page-fullpage-progress-bar {
+  height: 100%;
+  background: white;
+  animation: progressBar linear forwards;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .landing-page-popup {
+    margin: 10px;
+    max-height: 85vh;
+  }
+
+  .landing-page-popup-content {
+    padding: 24px;
+    padding-top: 48px;
+  }
+
+  .landing-page-popup-title {
+    font-size: 20px;
+  }
+
+  .landing-page-banner-content {
+    padding: 12px 16px;
+  }
+
+  .landing-page-banner-title {
+    font-size: 16px;
+  }
+
+  .landing-page-banner-body {
+    font-size: 13px;
+  }
+
+  .landing-page-banner-side {
+    width: 300px;
+  }
+
+  .landing-page-fullpage-container {
+    padding: 24px;
+  }
+
+  .landing-page-fullpage-title {
+    font-size: 36px;
+  }
+
+  .landing-page-fullpage-text {
+    font-size: 16px;
+  }
+
+  .landing-page-fullpage-button {
+    font-size: 16px;
+    padding: 14px 28px;
+    min-width: 140px;
+  }
+
+  .landing-page-fullpage-close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .landing-page-popup-backdrop {
+    padding: 10px;
+  }
+
+  .landing-page-popup {
+    margin: 0;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .landing-page-popup-content {
+    padding: 20px;
+    padding-top: 44px;
+  }
+
+  .landing-page-popup-title {
+    font-size: 18px;
+  }
+
+  .landing-page-popup-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .landing-page-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .landing-page-banner-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .landing-page-banner-side {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateY(100%);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .landing-page-banner-side.landing-page-banner-visible {
+    transform: translateY(0);
+  }
+
+  .landing-page-fullpage-container {
+    padding: 20px;
+  }
+
+  .landing-page-fullpage-title {
+    font-size: 28px;
+  }
+
+  .landing-page-fullpage-text {
+    font-size: 15px;
+  }
+
+  .landing-page-fullpage-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .landing-page-fullpage-button {
+    font-size: 14px;
+    padding: 12px 24px;
+    min-width: auto;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .landing-page-fullpage-close {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .landing-page-popup {
+    border: 2px solid #333;
+  }
+
+  .landing-page-banner {
+    border: 2px solid #fff;
+  }
+
+  .landing-page-fullpage-background {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .landing-page-popup-backdrop,
+  .landing-page-popup,
+  .landing-page-banner,
+  .landing-page-fullpage,
+  .landing-page-fullpage-container,
+  .landing-page-fullpage-progress-bar,
+  .landing-page-popup-button,
+  .landing-page-banner-button,
+  .landing-page-fullpage-button,
+  .landing-page-popup-close,
+  .landing-page-banner-close,
+  .landing-page-fullpage-close {
+    animation: none;
+    transition: none;
+  }
+
+  .landing-page-banner {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .landing-page-banner-side {
+    transform: translateX(0) translateY(-50%);
+  }
+
+  .landing-page-fullpage-container {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .landing-page-popup {
+    background: transparent;
+    color: #e1e1e1;
+  }
+
+  .landing-page-popup-title {
+    color: #fff;
+  }
+
+  .landing-page-popup-body {
+    color: #ccc;
+  }
+
+  .landing-page-popup-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+  }
+
+  .landing-page-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+}
+
+/* Focus styles for accessibility */
+.landing-page-popup:focus,
+.landing-page-fullpage:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.landing-page-popup-button:focus,
+.landing-page-banner-button:focus,
+.landing-page-fullpage-button:focus,
+.landing-page-popup-close:focus,
+.landing-page-banner-close:focus,
+.landing-page-fullpage-close:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .landing-page-popup-backdrop,
+  .landing-page-banner,
+  .landing-page-fullpage {
+    display: none !important;
+  }
+}

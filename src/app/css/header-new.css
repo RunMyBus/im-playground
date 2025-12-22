@@ -1,0 +1,443 @@
+/* Modern IGM Header Styles - Synced with themes.css */
+
+/* Climate Clock Banner */
+.climate-clock {
+    background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.climate-clock a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.clock-timer {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.clock-close {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.clock-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Modern Header */
+.header-new {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+/* Logo */
+.logo-img-patron {
+    position: relative;
+    width: 140px;
+    height: 40px;
+}
+
+.green-hour-logo {
+    position: relative;
+    width: 140px;
+    height: 40px;
+}
+
+/* Navigation */
+.header-new-links-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-new-links-box > li {
+    position: relative;
+}
+
+.header-new-links-box > li > span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border-radius: 8px;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.header-new-links-box > li > span:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+}
+
+/* Dropdown Menu */
+/*.header-new-links-box > li > ul {*/
+/*    position: absolute;*/
+/*    top: calc(100% + 8px);*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    background: var(--glass-bg);*/
+/*    backdrop-filter: blur(24px);*/
+/*    -webkit-backdrop-filter: blur(24px);*/
+/*    border: 1px solid var(--border-color);*/
+/*    border-radius: 12px;*/
+/*    min-width: 280px;*/
+/*    padding: 8px;*/
+/*    box-shadow: var(--shadow-md);*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transition: all var(--transition);*/
+/*    z-index: 1000;*/
+/*    display: block;*/
+/*    list-style: none;*/
+/*}*/
+
+.header-new-links-box > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.header-new-links-box > li > ul > span {
+    display: block;
+}
+
+.header-new-links-box > li > ul > span > li:first-child {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    margin-bottom: 4px;
+}
+
+.header-new-links-box > li > ul a {
+    display: block;
+    padding: 10px 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all var(--transition);
+}
+
+.header-new-links-box > li > ul a:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* Nested Dropdowns */
+.header-new-links-box ul ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    backdrop-filter: none;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+    min-width: auto;
+}
+
+.header-new-links-box ul li:has(ul) > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.header-new-links-box ul li:has(ul) > div:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+}
+
+.header-new-links-box ul li:has(ul) > div .fa-caret-down {
+    transition: transform var(--transition);
+}
+
+.header-new-links-box ul li:has(ul).active > ul {
+    max-height: 300px;
+}
+
+.header-new-links-box ul li:has(ul).active > div .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+.header-new-links-box ul ul a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.header-new-links-box ul ul a::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    transition: background var(--transition);
+}
+
+.header-new-links-box ul ul a:hover::before {
+    background: var(--accent);
+}
+
+/* Theme Switcher Integration */
+.header-new-links-box > li:has(.theme-switcher) {
+    display: flex;
+    align-items: center;
+}
+
+/* User Profile */
+.account_username {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.header-new-links-box > li > img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Login Button */
+.btn-login-header {
+    padding: 10px 24px;
+    background: var(--accent);
+    color: white !important;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.btn-login-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Mobile Menu Button */
+.for-mobile-inline .btn-login-header {
+    display: none;
+}
+
+/* Responsive Design - Tablet and Below (1024px) */
+@media (max-width: 1024px) {
+    .for-desktop {
+        display: none !important;
+    }
+
+    .for-mobile-inline .btn-login-header {
+        display: block;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .header-new {
+        height: 70px;
+        padding: 8px 0;
+    }
+
+    .logo-img-patron,
+    .green-hour-logo {
+        width: 120px;
+        height: 35px;
+    }
+
+    .header-new .row {
+        align-items: center;
+    }
+}
+
+/* Tablet Landscape (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-new {
+        height: 75px;
+    }
+
+    .logo-img-patron,
+    .green-hour-logo {
+        width: 130px;
+        height: 38px;
+    }
+}
+
+/* Mobile and Small Tablets (640px and below) */
+@media (max-width: 640px) {
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .header-new {
+        height: 60px;
+        padding: 6px 0;
+    }
+
+    .logo-img-patron,
+    .green-hour-logo {
+        width: 100px;
+        height: 30px;
+    }
+
+    .climate-clock {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .clock-timer {
+        font-size: 11px;
+    }
+
+    .for-mobile-inline .btn-login-header {
+        padding: 8px 16px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    /* Better spacing for mobile */
+    .header-new .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .custom-flex {
+        gap: 12px;
+    }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .header-new {
+        height: 56px;
+        padding: 4px 0;
+    }
+
+    .logo-img-patron,
+    .green-hour-logo {
+        width: 90px;
+        height: 28px;
+    }
+
+    .for-mobile-inline .btn-login-header {
+        padding: 7px 14px;
+        font-size: 11px;
+    }
+
+    .climate-clock {
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+
+    .clock-timer {
+        font-size: 10px;
+    }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+    .header-new-links-box > li > span,
+    .header-new-links-box ul li > div,
+    .header-new-links-box ul a {
+        padding: 12px 16px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-login-header {
+        min-height: 44px;
+        min-width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 850px) and (orientation: landscape) {
+    .header-new {
+        height: 56px;
+    }
+
+    .logo-img-patron,
+    .green-hour-logo {
+        width: 100px;
+        height: 30px;
+    }
+
+    .for-mobile-inline .btn-login-header {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
