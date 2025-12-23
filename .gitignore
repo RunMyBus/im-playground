@@ -1,8 +1,8 @@
 .next
-node_modules
-package-lock.json
-.env
-.env.local
+# node_modules
+# package-lock.json
+# .env
+# .env.local
 .idea
 logs
 coverage

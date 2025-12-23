@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3005",
+    "dev": "next dev -p 3007",
     "build": "next build",
-    "start": "next start -p 3005",
+    "start": "next start -p 3007",
     "lint": "next lint",
     "qaStart": "next start -p 3051"
   },
@@ -34,7 +34,6 @@
     "formik": "^2.4.5",
     "html-react-parser": "^5.1.0",
     "lodash": "^4.17.21",
-    "lovable-tagger": "^1.1.13",
     "mapbox-gl": "^3.2.0",
     "next": "^14.0.4",
     "react": "^18",
